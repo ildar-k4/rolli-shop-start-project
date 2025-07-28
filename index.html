@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин роллов</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700&subset=cyrillic-ext">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container text-center">
+            <img src="img/logo/logo.svg" width="92" alt="Логотип магазина суши и пиццы">
+            
+            <h1 class="display-4">Доставка роллов</h1> 
+            <p class="lead">Оперативно и вкусно</p>
+        </div>
+    </header>
+
+    <main class="container mb-5"> 
+        <div class="row">
+            <section class="col-md-8">
+                <div class="row" id="products-container">
+
+                </div>
+            </section>
+
+            <aside class="col-md-4">
+                <!-- Корзина -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Ваш заказ</h2>
+                        <div data-cart-empty class="alert alert-secondary" role="alert">
+                            Корзина пуста
+                        </div>
+                        <!-- cart-wrapper -->
+                        <div class="cart-wrapper">
+                           
+                        </div>
+                        <!-- // cart-wrapper -->
+
+                        <!-- Стоимость заказа -->
+                        <div class="cart-total">
+                            <p data-cart-delivery class="none"><span class="h5">Доставка:</span> <span class="delivery-cost">150 ₽</span><br>
+                            <span class="small">Бесплатно при заказе от 600 ₽</span></p>
+                            <p><span class="h5">Итого:</span> <span class="total-price">0</span> <span class="rouble">₽</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Оформить заказ -->
+                    <div id="order-form" class="card-body border-top none">
+                        <h2 class="card-title">Оформить заказ</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="phone" class="sr-only">Ваш номер телефона</label>
+                                
+                                <input type="tel" class="form-control" id="phone" placeholder="Ваш номер телефона" required>
+                                
+                            </div>
+                            <button type="submit" class="btn btn-primary">Заказать</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- // Корзина -->
+            </aside>
+        </div>
+    </main>
+
+    <script src="js/renderProducts.js"></script>
+    <script src="js/calcCartPriceAndDelivery.js"></script>
+    <script src="js/toggleCartStatus.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
